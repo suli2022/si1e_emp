@@ -6,16 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "lite-server",
-    "json": "json-server --watch database.json"
-  },  
+    "hai": "hai-server --watch database.json"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.2.3"
+    "bootstrap": "^5.2.3",
+    "hai-server": "^0.0.4"
   },
   "devDependencies": {
-    "json-server": "^0.17.1",
     "lite-server": "^2.6.1"
   }
 }

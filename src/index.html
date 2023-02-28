@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sablon</title>
+    <title>emp</title>
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Sablon</h1>
+        <h1>Dolgozók</h1>
         
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
+            Hozzáadás
+        </button>
 
         <table id="dolgozoTabla" 
         class="table table-striped">
@@ -27,7 +31,111 @@
 
 
     </div>
+
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Dolgozó hozzáadása</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+
+
+            <div class="addForm">
+                <div class="mt-3">
+                    <label for="nameInput" class="form-label">Név</label>
+                    <input type="text" id="nameInput" class="form-control">
+                </div>
+                <div class="mt-3">
+                    <label for="cityInput" class="form-label">Település</label>
+                    <input type="text" id="cityInput" class="form-control">
+                </div>
+                <div class="mt-3">
+                    <label for="salaryInput" class="form-label">Fizetés</label>
+                    <input type="text" id="salaryInput" class="form-control">
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" 
+          data-bs-dismiss="modal">Bezárás</button>
+
+          <button type="button" class="btn btn-primary"
+          id="addButtonSave" data-bs-dismiss="modal">Mentés</button>
+
+        </div>
+      </div>
+    </div>
+  </div>    
+
+
+
+
+  <!-- Modify Modal -->
+  <div class="modal fade" id="modifyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Dolgozó módosítása</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+
+
+            <div class="addForm">
+                <div class="mt-3">
+                    <label for="idEditInput" class="form-label">Azonosító</label>
+                    <input type="text" id="idEditInput" class="form-control"
+                    readonly>
+                </div>
+                <div class="mt-3">
+                    <label for="nameEditInput" class="form-label">Név</label>
+                    <input type="text" id="nameEditInput" class="form-control">
+                </div>
+                <div class="mt-3">
+                    <label for="cityEditInput" class="form-label">Település</label>
+                    <input type="text" id="cityEditInput" class="form-control">
+                </div>
+                <div class="mt-3">
+                    <label for="salaryEditInput" class="form-label">Fizetés</label>
+                    <input type="text" id="salaryEditInput" class="form-control">
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" 
+          data-bs-dismiss="modal">Bezárás</button>
+
+          <button type="button" class="btn btn-primary"
+          id="addButtonSave" data-bs-dismiss="modal">Mentés</button>
+
+        </div>
+      </div>
+    </div>
+  </div>    
+
+
+
+
     <script src="app.js"></script>
+    <script src="bootstrap.js"></script>
 
 </body>
 </html>

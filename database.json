@@ -35,6 +35,18 @@
       "city": "Békéscsaba",
       "salary": 279,
       "id": 7
+    },
+    {
+      "name": "Teremtő Ádám",
+      "city": "Szolnok",
+      "salary": 398,
+      "id": 8
+    },
+    {
+      "name": "Csati Ilona",
+      "city": "Szeged",
+      "salary": "387",
+      "id": 9
     }
   ]
 }
