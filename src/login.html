@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belépés</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body>
+
+    <ul class="nav justify-content-center">
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Dolgozók</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.html">Belépés</a>
+        </li>
+      </ul>    
+
+
+    <div class="container">
+        <h2>Beléptetés</h2>
+
+        <div class="loginFrom">
+
+            <div class="mt-3">
+                <label for="user"
+                class="form-label"
+                >Felhasználónév</label>
+                <input type="text" id="user"
+                class="form-control">
+            </div>
+            <div class="mt-3">
+                <label for="pass"
+                class="form-label">Jelszó</label>
+                <!--
+                    TODO: a type password kell legyen
+                -->
+                
+                <input type="text" id="pass"
+                class="form-control">
+            </div>
+            <button id="loginButton"
+            class="btn btn-primary mt-3">Belépés</button>
+        </div>
+
+
+    </div>
+
+    <script src="login.js"></script>
+    <script src="bootstrap.js"></script>
+
+</body>
+</html>

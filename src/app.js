@@ -8,8 +8,10 @@ const idEditInput = document.querySelector('#idEditInput');
 const nameEditInput = document.querySelector('#nameEditInput');
 const cityEditInput = document.querySelector('#cityEditInput');
 const salaryEditInput = document.querySelector('#salaryEditInput');
+const updateButtonSave = document.querySelector('#updateButtonSave');
 
-const host = 'http://localhost:3000/';
+
+const host = 'http://localhost:8000/api/';
 const endpoint = 'employees';
 const url = host + endpoint;
 
@@ -65,6 +67,10 @@ function generateModifyButton(employee) {
     let button = document.createElement('button');
     button.textContent = 'Szerkesztés';
     button.classList = 'btn btn-primary';
+    
+    button.setAttribute('data-bs-toggle', 'modal');
+    button.setAttribute('data-bs-target', '#modifyModal');
+
     button.addEventListener('click', () => {
         console.log(employee.id)
         
@@ -125,4 +131,38 @@ function clearInputElements() {
     nameInput.value = '';
     cityInput.value = '';
     salaryInput.valule = '';
+}
+
+
+updateButtonSave.addEventListener('click', () => {
+    
+    let id = idEditInput.value;
+    let name = nameEditInput.value;
+    let city = cityEditInput.value;
+    let salary = salaryEditInput.value;    
+    let employee = {
+        id: id,
+        name: name,
+        city: city,
+        salary: salary
+    }    
+    updateEmployee(employee);
+})
+
+function updateEmployee(emp) {
+    console.log(emp);
+    console.log(JSON.stringify(emp));
+    let urlSec = url + "/" + emp.id;
+    console.log(urlSec)
+    fetch(urlSec, {
+        method: 'put',
+        body: JSON.stringify(emp),
+        headers: {
+            "Content-type": "application/json"
+        }
+    })
+    .then(response => response.json())
+    .then(result => console.log(result))
+    .catch(err => console.log(err));
+
 }

@@ -25,28 +25,10 @@
       "id": 5
     },
     {
-      "name": "Erős Mária",
-      "city": "Szeged",
-      "salary": 395,
-      "id": 6
-    },
-    {
-      "name": "Gyenge Géza",
-      "city": "Békéscsaba",
-      "salary": 279,
-      "id": 7
-    },
-    {
-      "name": "Teremtő Ádám",
-      "city": "Szolnok",
-      "salary": 398,
-      "id": 8
-    },
-    {
-      "name": "Csati Ilona",
-      "city": "Szeged",
-      "salary": "387",
-      "id": 9
+      "id": 6,
+      "name": "bbbbb",
+      "city": "bbbbb",
+      "salary": "111"
     }
   ]
 }

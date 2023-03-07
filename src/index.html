@@ -8,11 +8,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+
+  <ul class="nav justify-content-center">
+
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">Dolgozók</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="login.html">Belépés</a>
+    </li>
+  </ul>
+
+
     <div class="container">
         <h1>Dolgozók</h1>
         
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
+        <button type="button" class="btn btn-primary" 
+        data-bs-toggle="modal" data-bs-target="#addModal">
             Hozzáadás
         </button>
 
@@ -35,7 +49,7 @@
 
 
   
-  <!-- Modal -->
+  <!-- Add Modal -->
   <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -124,7 +138,7 @@
           data-bs-dismiss="modal">Bezárás</button>
 
           <button type="button" class="btn btn-primary"
-          id="addButtonSave" data-bs-dismiss="modal">Mentés</button>
+          id="updateButtonSave" data-bs-dismiss="modal">Mentés</button>
 
         </div>
       </div>
