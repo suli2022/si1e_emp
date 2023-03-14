@@ -30,6 +30,12 @@ function login(user, pass) {
         }
     })
     .then(response => response.json())
-    .then(result => console.log(result))
-    .catch(err => console.log(err));
+    .then(result => {
+        console.log(result.token);
+        localStorage.setItem('token', result.token);
+    })
+    .catch(err => {
+        console.log('Hiba');
+        console.log(err);
+    });
 }

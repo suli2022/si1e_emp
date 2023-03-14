@@ -56,8 +56,6 @@ function generateDeleteButton(id) {
     button.addEventListener('click', () => {
         console.log(id)
         deleteEmployee(id);
-        dolgozoTorzs.textContent = '';
-        getEmployees();
     });
     td.append(button);
     return td;
@@ -73,25 +71,29 @@ function generateModifyButton(employee) {
 
     button.addEventListener('click', () => {
         console.log(employee.id)
-        
         idEditInput.value = employee.id;
         nameEditInput.value = employee.name;
         cityEditInput.value = employee.city;
         salaryEditInput.value = employee.salary;
-
-        dolgozoTorzs.textContent = '';
-        getEmployees();
     });
     td.append(button);
     return td;
 }
 
 function deleteEmployee(id) {
-    //   localhost:3000/employee/3
     let fullurl = url + '/' + id;
-
+    let token = localStorage.getItem('token');
     fetch(fullurl, {
-        method: 'delete'
+        method: 'delete',
+        headers: {
+            "Authorization": "Bearer " + token
+        }
+    })
+    .then(response => response.json())
+    .then(result => {
+        console.log(result);
+        dolgozoTorzs.textContent = '';
+        getEmployees();
     })
     .catch(err => console.log(err));
 }
@@ -99,14 +101,13 @@ function deleteEmployee(id) {
 addButtonSave.addEventListener('click', () => {
     addEmployee();
     clearInputElements();
-    dolgozoTorzs.textContent = '';
-    getEmployees();    
 });
 
 function addEmployee() {
     let name = nameInput.value;
     let city = cityInput.value;
     let salary = salaryInput.value;
+    let token = localStorage.getItem('token');
     fetch(url, {
         method: 'POST',
         body: JSON.stringify({
@@ -115,13 +116,15 @@ function addEmployee() {
             "salary": salary
         }),
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + token
         }
     })
     .then( response => response.json())
     .then(result => {
         console.log(result);
-        console.log('belül')
+        dolgozoTorzs.textContent = '';
+        getEmployees();    
     })
     .catch(err => console.log(err))
     ;
@@ -153,16 +156,22 @@ function updateEmployee(emp) {
     console.log(emp);
     console.log(JSON.stringify(emp));
     let urlSec = url + "/" + emp.id;
-    console.log(urlSec)
+    console.log(urlSec);
+    let token = localStorage.getItem('token');
     fetch(urlSec, {
         method: 'put',
         body: JSON.stringify(emp),
         headers: {
-            "Content-type": "application/json"
+            "Content-type": "application/json",
+            "Authorization": "Bearer " + token
         }
     })
     .then(response => response.json())
-    .then(result => console.log(result))
+    .then(result => {
+        console.log(result);
+        dolgozoTorzs.textContent = '';
+        getEmployees();
+    })
     .catch(err => console.log(err));
 
 }
